@@ -7,13 +7,11 @@
   <meta name="description" content="Hare2Haul offers fast junk removal, cleanouts, move-out hauling, yard debris pickup, storage unit cleanouts, and garage cleanouts in Davenport, Iowa and the Quad Cities." />
   <meta name="theme-color" content="#0b0f17" />
 
-  <!-- Social preview -->
   <meta property="og:title" content="Hare2Haul | Junk Removal & Cleanouts" />
   <meta property="og:description" content="Big or small — we’re Hare2Haul. Serving Davenport, IA and the Quad Cities." />
   <meta property="og:image" content="assets/hare2haul-drowning-in-junk-hero.png" />
   <meta property="og:type" content="website" />
 
-  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -29,11 +27,9 @@
       --yellow:#ffd400;
       --yellow2:#ffea57;
       --accent:#52a8ff;
-      --danger:#ff3b3b;
       --shadow: 0 18px 55px rgba(0,0,0,.55);
       --radius: 22px;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -47,22 +43,9 @@
         var(--bg);
       overflow-x:hidden;
     }
-
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
-
     .container{width:min(1160px, 92vw); margin:0 auto}
-    .pill{
-      display:inline-flex; gap:.5rem; align-items:center;
-      padding:.45rem .85rem;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      border-radius:999px;
-      color:var(--muted);
-      font-weight:600;
-      backdrop-filter: blur(10px);
-    }
-    .pill b{color:var(--yellow2)}
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
@@ -72,9 +55,7 @@
       font-weight:800;
       letter-spacing:.2px;
       transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
-      cursor:pointer;
-      user-select:none;
-      white-space:nowrap;
+      cursor:pointer; user-select:none; white-space:nowrap;
     }
     .btn:active{transform: translateY(1px)}
     .btn-primary{
@@ -90,7 +71,19 @@
     }
     .btn-ghost:hover{background: rgba(255,255,255,.08); transform: translateY(-1px)}
 
-    /* Sticky top bar */
+    .pill{
+      display:inline-flex; gap:.5rem; align-items:center;
+      padding:.45rem .85rem;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      backdrop-filter: blur(10px);
+    }
+    .pill b{color:var(--yellow2)}
+
+    /* Top bar */
     .topbar{
       position:sticky; top:0; z-index:50;
       background: rgba(7,10,16,.55);
@@ -100,30 +93,31 @@
     .topbar-inner{
       display:flex; align-items:center; justify-content:space-between;
       padding:.85rem 0;
+      gap: .8rem;
     }
     .brand{
       display:flex; align-items:center; gap:.8rem;
-      font-weight:900;
-      letter-spacing:.2px;
+      font-weight:900; letter-spacing:.2px;
+      min-width: 0;
     }
     .brand img{
       width:42px; height:42px;
       border-radius: 12px;
       box-shadow: 0 10px 20px rgba(0,0,0,.35);
       border:1px solid rgba(255,255,255,.10);
+      flex: 0 0 auto;
     }
+    .brand .title{font-size:1.05rem; line-height:1.05}
+    .brand .sub{color:var(--muted); font-weight:800; font-size:.9rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
     .nav{
-      display:flex; gap:1rem; align-items:center;
-      color:var(--muted);
-      font-weight:700;
+      display:none;
+      gap:1rem; align-items:center;
+      color:var(--muted); font-weight:700;
     }
     .nav a{padding:.45rem .6rem; border-radius:12px}
     .nav a:hover{background: rgba(255,255,255,.06); color: var(--text)}
     .top-cta{display:flex; gap:.55rem; align-items:center}
-    .hide-mobile{display:none}
-    @media (min-width: 920px){
-      .hide-mobile{display:flex}
-    }
+    @media (min-width: 920px){ .nav{display:flex} }
 
     /* Hero */
     .hero{padding: 2.2rem 0 1.2rem}
@@ -137,8 +131,7 @@
       .hero-grid{grid-template-columns: 1.08fr .92fr; gap: 1.4rem}
       .hero{padding: 3.1rem 0 1.6rem}
     }
-
-    .hero-card{
+    .card{
       border:1px solid rgba(255,255,255,.10);
       background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
       border-radius: var(--radius);
@@ -146,11 +139,8 @@
       overflow:hidden;
       position:relative;
     }
-
     .hero-copy{padding: 1.4rem 1.25rem 1.25rem}
-    @media (min-width: 980px){
-      .hero-copy{padding: 1.8rem 1.8rem 1.6rem}
-    }
+    @media (min-width: 980px){ .hero-copy{padding: 1.8rem 1.8rem 1.6rem} }
 
     .hero h1{
       margin:.9rem 0 .75rem;
@@ -158,10 +148,9 @@
       line-height: 1.02;
       letter-spacing: -0.8px;
     }
-    .hero h1 .hl{
+    .hl{
       background: linear-gradient(135deg, var(--yellow2), var(--yellow));
-      -webkit-background-clip:text;
-      background-clip:text;
+      -webkit-background-clip:text; background-clip:text;
       color:transparent;
       text-shadow: 0 18px 50px rgba(255,212,0,.10);
     }
@@ -171,6 +160,7 @@
       font-size: 1.05rem;
       line-height: 1.55;
       max-width: 58ch;
+      font-weight: 650;
     }
     .hero-actions{display:flex; flex-wrap:wrap; gap:.7rem; align-items:center}
     .hero-actions .mini{color:var(--muted); font-weight:700; font-size:.95rem}
@@ -195,15 +185,10 @@
       flex: 0 0 auto;
     }
 
-    .hero-media{
-      position:relative;
-      min-height: 420px;
-    }
+    .hero-media{position:relative; min-height: 420px}
     @media (min-width: 980px){ .hero-media{min-height: 520px} }
-
     .hero-media img{
-      width:100%;
-      height:100%;
+      width:100%; height:100%;
       object-fit: cover;
       filter: saturate(1.05) contrast(1.04);
       transform: scale(1.02);
@@ -216,12 +201,8 @@
       pointer-events:none;
     }
     .hero-sticker{
-      position:absolute;
-      left: 1rem;
-      bottom: 1rem;
-      display:flex;
-      align-items:center;
-      gap:.75rem;
+      position:absolute; left: 1rem; bottom: 1rem;
+      display:flex; align-items:center; gap:.75rem;
       padding:.8rem .9rem;
       border-radius: 18px;
       border:1px solid rgba(255,255,255,.14);
@@ -232,7 +213,7 @@
     }
     .hero-sticker img{width:46px; height:46px; border-radius: 14px; border:1px solid rgba(255,255,255,.12)}
     .hero-sticker strong{display:block; font-size:1rem; line-height:1.1}
-    .hero-sticker span{display:block; color:var(--muted); font-weight:700; font-size:.92rem}
+    .hero-sticker span{display:block; color:var(--muted); font-weight:800; font-size:.92rem}
 
     /* Sections */
     section{padding: 2.2rem 0}
@@ -250,6 +231,7 @@
       color:var(--muted);
       max-width: 60ch;
       font-weight:700;
+      line-height: 1.6;
     }
 
     .grid{
@@ -257,31 +239,11 @@
       grid-template-columns: 1fr;
       gap: 1rem;
     }
-    @media(min-width: 860px){
-      .grid{grid-template-columns: repeat(3, 1fr);}
+    @media(min-width: 860px){ .grid{grid-template-columns: repeat(3, 1fr);} }
+    .service{
+      padding: 1.1rem 1.1rem 1.15rem;
     }
-
-    .card{
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      box-shadow: 0 14px 45px rgba(0,0,0,.40);
-      overflow:hidden;
-      position:relative;
-    }
-    .card-pad{padding: 1.1rem 1.1rem 1.15rem}
-    .card h3{
-      margin:0 0 .4rem;
-      font-size: 1.15rem;
-      letter-spacing: -0.3px;
-    }
-    .card p{
-      margin:0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-weight: 650;
-    }
-    .card .icon{
+    .service .icon{
       width:44px; height:44px; border-radius: 14px;
       display:grid; place-items:center;
       background: rgba(255,212,0,.12);
@@ -290,16 +252,16 @@
       margin-bottom:.85rem;
       font-size: 1.2rem;
     }
+    .service h3{margin:0 0 .4rem; font-size: 1.15rem; letter-spacing: -0.3px;}
+    .service p{margin:0; color: var(--muted); line-height: 1.6; font-weight: 650;}
 
-    /* Before/After */
+    /* Combined Before/After (ONE image each) */
     .ba-grid{
       display:grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
-    @media(min-width: 980px){
-      .ba-grid{grid-template-columns: repeat(2, 1fr);}
-    }
+    @media(min-width: 980px){ .ba-grid{grid-template-columns: repeat(2, 1fr);} }
 
     .ba-card{
       border-radius: var(--radius);
@@ -317,48 +279,41 @@
     }
     .ba-title strong{font-size:1.05rem}
     .ba-title span{color:var(--muted); font-weight:800}
-
-    .ba-split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .ba-shot{
-      position:relative;
-      aspect-ratio: 4/3;
+    .ba-img{
+      width:100%;
+      aspect-ratio: 9/10;
+      background: rgba(0,0,0,.2);
+      position: relative;
       overflow:hidden;
     }
-    .ba-shot img{
+    .ba-img img{
       width:100%; height:100%;
       object-fit: cover;
       filter: saturate(1.02) contrast(1.03);
     }
-    .tag{
+    .ba-chip{
       position:absolute;
-      top:.75rem; left:.75rem;
+      left: .85rem;
+      top: .85rem;
       padding:.45rem .65rem;
       border-radius: 999px;
-      font-weight:900;
-      letter-spacing:.4px;
-      font-size:.82rem;
+      font-weight: 900;
+      font-size: .82rem;
+      letter-spacing:.35px;
       border:1px solid rgba(255,255,255,.16);
       background: rgba(10,14,26,.60);
       backdrop-filter: blur(10px);
     }
-    .tag.before{color:#fff}
-    .tag.after{color:#111; background: linear-gradient(135deg, var(--yellow), #ffb800); border-color: rgba(255,212,0,.45)}
+    .ba-chip b{color: var(--yellow2)}
 
-    /* Testimonials */
+    /* Reviews */
     .reviews{
       display:grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
-    @media(min-width: 900px){
-      .reviews{grid-template-columns: repeat(3, 1fr);}
-    }
-    .review{
-      padding: 1.15rem 1.1rem 1.1rem;
-    }
+    @media(min-width: 900px){ .reviews{grid-template-columns: repeat(3, 1fr);} }
+    .review{padding: 1.15rem 1.1rem 1.1rem;}
     .stars{letter-spacing: 1px; color: var(--yellow); font-size: 1.05rem}
     .who{
       display:flex; align-items:center; justify-content:space-between; gap:1rem;
@@ -392,9 +347,7 @@
     .cta-inner h3{margin:0 0 .35rem; font-size:1.55rem; letter-spacing:-.4px}
     .cta-inner p{margin:0; color:var(--muted); font-weight:700; line-height:1.6}
     .cta-actions{display:flex; gap:.7rem; flex-wrap:wrap; justify-content:flex-start}
-    @media(min-width: 920px){
-      .cta-actions{justify-content:flex-end}
-    }
+    @media(min-width: 920px){ .cta-actions{justify-content:flex-end} }
 
     /* Footer */
     footer{
@@ -408,12 +361,8 @@
       gap: 1rem;
       align-items:flex-start;
     }
-    @media(min-width: 920px){
-      .footer-grid{grid-template-columns: 1.1fr .9fr;}
-    }
-    .foot-brand{
-      display:flex; gap: .9rem; align-items:flex-start;
-    }
+    @media(min-width: 920px){ .footer-grid{grid-template-columns: 1.1fr .9fr;} }
+    .foot-brand{display:flex; gap: .9rem; align-items:flex-start;}
     .foot-brand img{
       width:56px; height:56px;
       border-radius: 16px;
@@ -427,9 +376,7 @@
       gap:.65rem;
       justify-items:start;
     }
-    @media(min-width: 520px){
-      .foot-links{grid-template-columns: 1fr 1fr;}
-    }
+    @media(min-width: 520px){ .foot-links{grid-template-columns: 1fr 1fr;} }
     .foot-links a{
       display:inline-flex; gap:.6rem; align-items:center;
       padding:.7rem .8rem;
@@ -442,7 +389,7 @@
     .foot-links a:hover{background: rgba(255,255,255,.06)}
     .small{color:var(--muted); font-weight:700; font-size:.95rem; margin-top: .9rem}
 
-    /* Subtle reveal animation */
+    /* Reveal animation */
     .reveal{opacity:0; transform: translateY(10px); transition: .5s ease}
     .reveal.show{opacity:1; transform: translateY(0)}
   </style>
@@ -454,13 +401,13 @@
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="Hare2Haul home">
         <img src="assets/hare2haul-logo-square.png" alt="Hare2Haul logo" />
-        <div>
-          <div style="font-size:1.05rem; line-height:1.05;">Hare2Haul</div>
-          <div style="color:var(--muted); font-weight:800; font-size:.9rem;">Davenport, IA • Quad Cities</div>
+        <div style="min-width:0;">
+          <div class="title">Hare2Haul</div>
+          <div class="sub">Davenport, IA • Quad Cities</div>
         </div>
       </a>
 
-      <nav class="nav hide-mobile" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#before-after">Before/After</a>
         <a href="#reviews">Reviews</a>
@@ -477,7 +424,7 @@
   <!-- HERO -->
   <main id="top" class="hero">
     <div class="container hero-grid">
-      <div class="hero-card">
+      <div class="card">
         <div class="hero-copy">
           <span class="pill">Serving <b>Davenport, Iowa</b> • Quad Cities • Surrounding Areas</span>
 
@@ -505,7 +452,7 @@
         </div>
       </div>
 
-      <div class="hero-card hero-media" aria-label="Hero image">
+      <div class="card hero-media" aria-label="Hero image">
         <img src="assets/hare2haul-drowning-in-junk-hero.png" alt="Drowning in junk promotional image" />
         <div class="hero-overlay"></div>
 
@@ -531,37 +478,37 @@
       </div>
 
       <div class="grid">
-        <article class="card card-pad reveal">
+        <article class="card service reveal">
           <div class="icon">🛋️</div>
           <h3>Move-Out Cleanouts</h3>
           <p>Leftover furniture, boxes, trash bags, and “last minute” items—gone quickly and cleanly.</p>
         </article>
 
-        <article class="card card-pad reveal">
+        <article class="card service reveal">
           <div class="icon">🏠</div>
           <h3>House & Apartment Junk</h3>
           <p>Basements, bedrooms, living rooms—haul-away for the stuff you’re ready to get rid of.</p>
         </article>
 
-        <article class="card card-pad reveal">
+        <article class="card service reveal">
           <div class="icon">📦</div>
           <h3>Storage Units</h3>
           <p>Clear it out and close it out. We haul away boxes, bins, furniture, and junk fast.</p>
         </article>
 
-        <article class="card card-pad reveal">
+        <article class="card service reveal">
           <div class="icon">🚗</div>
           <h3>Garage Cleanouts</h3>
           <p>Make your garage usable again—tools, old furniture, clutter, and random junk removed.</p>
         </article>
 
-        <article class="card card-pad reveal">
+        <article class="card service reveal">
           <div class="icon">🍂</div>
           <h3>Yard Debris</h3>
-          <p>Leaves, branches, and cleanup piles. Also great for post-project or seasonal cleanups.</p>
+          <p>Leaves, branches, and cleanup piles. Great for seasonal cleanups and post-project piles.</p>
         </article>
 
-        <article class="card card-pad reveal">
+        <article class="card service reveal">
           <div class="icon">🧱</div>
           <h3>Light Debris Cleanup</h3>
           <p>General debris from projects (non-hazardous). Call with details and we’ll quote it.</p>
@@ -570,13 +517,13 @@
     </div>
   </section>
 
-  <!-- BEFORE/AFTER -->
+  <!-- BEFORE/AFTER (COMBINED IMAGES) -->
   <section id="before-after">
     <div class="container">
       <div class="section-head">
         <div>
-          <h2 class="reveal">Realistic before & after results</h2>
-          <p class="reveal">Same spot. Same angle. Just… gone.</p>
+          <h2 class="reveal">Before & after results</h2>
+          <p class="reveal">Your images already include BOTH before and after in one photo — we show them cleanly here.</p>
         </div>
       </div>
 
@@ -586,15 +533,9 @@
             <strong>Living Room Move-Out</strong>
             <span>Before → After</span>
           </div>
-          <div class="ba-split">
-            <div class="ba-shot">
-              <img src="assets/living-room-moveout-before.png" alt="Living room before cleanout" />
-              <div class="tag before">BEFORE</div>
-            </div>
-            <div class="ba-shot">
-              <img src="assets/living-room-moveout-after.png" alt="Living room after cleanout" />
-              <div class="tag after">AFTER</div>
-            </div>
+          <div class="ba-img">
+            <span class="ba-chip">Combined <b>BEFORE + AFTER</b></span>
+            <img src="assets/living-room-moveout-before.png" alt="Living room move-out before and after (combined)" />
           </div>
         </div>
 
@@ -603,15 +544,9 @@
             <strong>Yard Debris Cleanup</strong>
             <span>Before → After</span>
           </div>
-          <div class="ba-split">
-            <div class="ba-shot">
-              <img src="assets/yard-debris-before.png" alt="Yard debris before cleanup" />
-              <div class="tag before">BEFORE</div>
-            </div>
-            <div class="ba-shot">
-              <img src="assets/yard-debris-after.png" alt="Yard after cleanup" />
-              <div class="tag after">AFTER</div>
-            </div>
+          <div class="ba-img">
+            <span class="ba-chip">Combined <b>BEFORE + AFTER</b></span>
+            <img src="assets/yard-debris-before.png" alt="Yard debris cleanup before and after (combined)" />
           </div>
         </div>
 
@@ -620,15 +555,9 @@
             <strong>Storage Unit Cleanout</strong>
             <span>Before → After</span>
           </div>
-          <div class="ba-split">
-            <div class="ba-shot">
-              <img src="assets/storage-unit-before.png" alt="Storage unit before cleanout" />
-              <div class="tag before">BEFORE</div>
-            </div>
-            <div class="ba-shot">
-              <img src="assets/storage-unit-after.png" alt="Storage unit after cleanout" />
-              <div class="tag after">AFTER</div>
-            </div>
+          <div class="ba-img">
+            <span class="ba-chip">Combined <b>BEFORE + AFTER</b></span>
+            <img src="assets/storage-unit-before.png" alt="Storage unit cleanout before and after (combined)" />
           </div>
         </div>
 
@@ -637,15 +566,9 @@
             <strong>Garage Cleanout</strong>
             <span>Before → After</span>
           </div>
-          <div class="ba-split">
-            <div class="ba-shot">
-              <img src="assets/garage-cleanout-before.png" alt="Garage before cleanout" />
-              <div class="tag before">BEFORE</div>
-            </div>
-            <div class="ba-shot">
-              <img src="assets/garage-cleanout-after.png" alt="Garage after cleanout" />
-              <div class="tag after">AFTER</div>
-            </div>
+          <div class="ba-img">
+            <span class="ba-chip">Combined <b>BEFORE + AFTER</b></span>
+            <img src="assets/garage-cleanout-before.png" alt="Garage cleanout before and after (combined)" />
           </div>
         </div>
       </div>
@@ -673,7 +596,7 @@
       <div class="section-head">
         <div>
           <h2 class="reveal">What customers say</h2>
-          <p class="reveal">A few recent reviews (sample testimonials for marketing).</p>
+          <p class="reveal">Sample testimonials for marketing (you can replace later with real reviews).</p>
         </div>
       </div>
 
@@ -762,9 +685,7 @@
         <img src="assets/hare2haul-logo-square.png" alt="Hare2Haul logo" />
         <div>
           <div style="font-size:1.2rem; font-weight:950; letter-spacing:-.2px;">Hare2Haul</div>
-          <p>
-            Junk Removal & Cleanouts • Davenport, IA • Serving the Quad Cities & surrounding areas.
-          </p>
+          <p>Junk Removal & Cleanouts • Davenport, IA • Serving the Quad Cities & surrounding areas.</p>
           <div class="small">© <span id="year"></span> Hare2Haul. All rights reserved.</div>
         </div>
       </div>
@@ -779,10 +700,8 @@
   </footer>
 
   <script>
-    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Simple reveal-on-scroll
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
       for (const e of entries) {
