@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hare2Haul | Junk Removal & Cleanouts | Davenport, IA + Quad Cities</title>
+  <meta name="description" content="Hare2Haul offers fast junk removal, cleanouts, move-out hauling, yard debris pickup, storage unit cleanouts, and garage cleanouts in Davenport, Iowa and the Quad Cities." />
+  <meta name="theme-color" content="#0b0f17" />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Hare2Haul | Junk Removal & Cleanouts" />
+  <meta property="og:description" content="Big or small — we’re Hare2Haul. Serving Davenport, IA and the Quad Cities." />
+  <meta property="og:image" content="assets/hare2haul-drowning-in-junk-hero.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070a10;
+      --panel:#0b1020;
+      --panel2:#0c1328;
+      --text:#eaf0ff;
+      --muted:#b7c0d9;
+      --line: rgba(255,255,255,.12);
+      --yellow:#ffd400;
+      --yellow2:#ffea57;
+      --accent:#52a8ff;
+      --danger:#ff3b3b;
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius: 22px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Outfit", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 650px at 10% 0%, rgba(82,168,255,.22), transparent 62%),
+        radial-gradient(1000px 620px at 92% 12%, rgba(255,212,0,.18), transparent 60%),
+        radial-gradient(800px 520px at 50% 110%, rgba(255,59,59,.14), transparent 55%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    .container{width:min(1160px, 92vw); margin:0 auto}
+    .pill{
+      display:inline-flex; gap:.5rem; align-items:center;
+      padding:.45rem .85rem;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:600;
+      backdrop-filter: blur(10px);
+    }
+    .pill b{color:var(--yellow2)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+      padding: .95rem 1.15rem;
+      border-radius: 14px;
+      border:1px solid transparent;
+      font-weight:800;
+      letter-spacing:.2px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn-primary{
+      background: linear-gradient(135deg, var(--yellow), #ffb800);
+      color:#141414;
+      box-shadow: 0 16px 35px rgba(255,212,0,.22);
+    }
+    .btn-primary:hover{box-shadow: 0 20px 45px rgba(255,212,0,.30); transform: translateY(-1px)}
+    .btn-ghost{
+      background: rgba(255,255,255,.05);
+      border-color: var(--line);
+      color: var(--text);
+    }
+    .btn-ghost:hover{background: rgba(255,255,255,.08); transform: translateY(-1px)}
+
+    /* Sticky top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(7,10,16,.55);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:.85rem 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:.8rem;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .brand img{
+      width:42px; height:42px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .nav{
+      display:flex; gap:1rem; align-items:center;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .nav a{padding:.45rem .6rem; border-radius:12px}
+    .nav a:hover{background: rgba(255,255,255,.06); color: var(--text)}
+    .top-cta{display:flex; gap:.55rem; align-items:center}
+    .hide-mobile{display:none}
+    @media (min-width: 920px){
+      .hide-mobile{display:flex}
+    }
+
+    /* Hero */
+    .hero{padding: 2.2rem 0 1.2rem}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+    @media (min-width: 980px){
+      .hero-grid{grid-template-columns: 1.08fr .92fr; gap: 1.4rem}
+      .hero{padding: 3.1rem 0 1.6rem}
+    }
+
+    .hero-card{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero-copy{padding: 1.4rem 1.25rem 1.25rem}
+    @media (min-width: 980px){
+      .hero-copy{padding: 1.8rem 1.8rem 1.6rem}
+    }
+
+    .hero h1{
+      margin:.9rem 0 .75rem;
+      font-size: clamp(2.2rem, 3.2vw, 3.35rem);
+      line-height: 1.02;
+      letter-spacing: -0.8px;
+    }
+    .hero h1 .hl{
+      background: linear-gradient(135deg, var(--yellow2), var(--yellow));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow: 0 18px 50px rgba(255,212,0,.10);
+    }
+    .hero p{
+      margin: 0 0 1.1rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.55;
+      max-width: 58ch;
+    }
+    .hero-actions{display:flex; flex-wrap:wrap; gap:.7rem; align-items:center}
+    .hero-actions .mini{color:var(--muted); font-weight:700; font-size:.95rem}
+
+    .badges{
+      display:flex; flex-wrap:wrap; gap:.55rem;
+      margin-top:1rem;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:.55rem;
+      padding:.6rem .75rem;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{
+      width:10px; height:10px; border-radius: 99px;
+      background: var(--yellow);
+      box-shadow: 0 0 0 6px rgba(255,212,0,.12);
+      flex: 0 0 auto;
+    }
+
+    .hero-media{
+      position:relative;
+      min-height: 420px;
+    }
+    @media (min-width: 980px){ .hero-media{min-height: 520px} }
+
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.04);
+      transform: scale(1.02);
+    }
+    .hero-overlay{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(7,10,16,.92), rgba(7,10,16,.20) 55%, rgba(7,10,16,.55)),
+        radial-gradient(700px 450px at 18% 25%, rgba(255,212,0,.18), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-sticker{
+      position:absolute;
+      left: 1rem;
+      bottom: 1rem;
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      padding:.8rem .9rem;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(15,20,35,.72);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.45);
+      max-width: 92%;
+    }
+    .hero-sticker img{width:46px; height:46px; border-radius: 14px; border:1px solid rgba(255,255,255,.12)}
+    .hero-sticker strong{display:block; font-size:1rem; line-height:1.1}
+    .hero-sticker span{display:block; color:var(--muted); font-weight:700; font-size:.92rem}
+
+    /* Sections */
+    section{padding: 2.2rem 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:1rem;
+      margin-bottom: 1.1rem;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: clamp(1.5rem, 2.2vw, 2.0rem);
+      letter-spacing: -0.4px;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width: 60ch;
+      font-weight:700;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media(min-width: 860px){
+      .grid{grid-template-columns: repeat(3, 1fr);}
+    }
+
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: 0 14px 45px rgba(0,0,0,.40);
+      overflow:hidden;
+      position:relative;
+    }
+    .card-pad{padding: 1.1rem 1.1rem 1.15rem}
+    .card h3{
+      margin:0 0 .4rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.3px;
+    }
+    .card p{
+      margin:0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 650;
+    }
+    .card .icon{
+      width:44px; height:44px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(255,212,0,.12);
+      border:1px solid rgba(255,212,0,.25);
+      box-shadow: 0 18px 40px rgba(255,212,0,.08);
+      margin-bottom:.85rem;
+      font-size: 1.2rem;
+    }
+
+    /* Before/After */
+    .ba-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media(min-width: 980px){
+      .ba-grid{grid-template-columns: repeat(2, 1fr);}
+    }
+
+    .ba-card{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+    }
+    .ba-title{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: .95rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      gap: .8rem;
+    }
+    .ba-title strong{font-size:1.05rem}
+    .ba-title span{color:var(--muted); font-weight:800}
+
+    .ba-split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .ba-shot{
+      position:relative;
+      aspect-ratio: 4/3;
+      overflow:hidden;
+    }
+    .ba-shot img{
+      width:100%; height:100%;
+      object-fit: cover;
+      filter: saturate(1.02) contrast(1.03);
+    }
+    .tag{
+      position:absolute;
+      top:.75rem; left:.75rem;
+      padding:.45rem .65rem;
+      border-radius: 999px;
+      font-weight:900;
+      letter-spacing:.4px;
+      font-size:.82rem;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(10,14,26,.60);
+      backdrop-filter: blur(10px);
+    }
+    .tag.before{color:#fff}
+    .tag.after{color:#111; background: linear-gradient(135deg, var(--yellow), #ffb800); border-color: rgba(255,212,0,.45)}
+
+    /* Testimonials */
+    .reviews{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media(min-width: 900px){
+      .reviews{grid-template-columns: repeat(3, 1fr);}
+    }
+    .review{
+      padding: 1.15rem 1.1rem 1.1rem;
+    }
+    .stars{letter-spacing: 1px; color: var(--yellow); font-size: 1.05rem}
+    .who{
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      margin-top:.9rem;
+      color:var(--muted);
+      font-weight:800;
+    }
+
+    /* CTA banner */
+    .cta-banner{
+      border-radius: calc(var(--radius) + 6px);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 450px at 20% 10%, rgba(255,212,0,.18), transparent 60%),
+        radial-gradient(700px 400px at 80% 20%, rgba(82,168,255,.20), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .cta-inner{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1.35rem 1.15rem;
+      align-items:center;
+    }
+    @media(min-width: 920px){
+      .cta-inner{grid-template-columns: 1.2fr .8fr; padding: 1.7rem 1.7rem;}
+    }
+    .cta-inner h3{margin:0 0 .35rem; font-size:1.55rem; letter-spacing:-.4px}
+    .cta-inner p{margin:0; color:var(--muted); font-weight:700; line-height:1.6}
+    .cta-actions{display:flex; gap:.7rem; flex-wrap:wrap; justify-content:flex-start}
+    @media(min-width: 920px){
+      .cta-actions{justify-content:flex-end}
+    }
+
+    /* Footer */
+    footer{
+      padding: 2rem 0 2.2rem;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.15);
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      align-items:flex-start;
+    }
+    @media(min-width: 920px){
+      .footer-grid{grid-template-columns: 1.1fr .9fr;}
+    }
+    .foot-brand{
+      display:flex; gap: .9rem; align-items:flex-start;
+    }
+    .foot-brand img{
+      width:56px; height:56px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
+    }
+    .foot-brand p{margin:.2rem 0 0; color:var(--muted); font-weight:700; line-height:1.6}
+    .foot-links{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:.65rem;
+      justify-items:start;
+    }
+    @media(min-width: 520px){
+      .foot-links{grid-template-columns: 1fr 1fr;}
+    }
+    .foot-links a{
+      display:inline-flex; gap:.6rem; align-items:center;
+      padding:.7rem .8rem;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight:900;
+    }
+    .foot-links a:hover{background: rgba(255,255,255,.06)}
+    .small{color:var(--muted); font-weight:700; font-size:.95rem; margin-top: .9rem}
+
+    /* Subtle reveal animation */
+    .reveal{opacity:0; transform: translateY(10px); transition: .5s ease}
+    .reveal.show{opacity:1; transform: translateY(0)}
+  </style>
+</head>
+
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Hare2Haul home">
+        <img src="assets/hare2haul-logo-square.png" alt="Hare2Haul logo" />
+        <div>
+          <div style="font-size:1.05rem; line-height:1.05;">Hare2Haul</div>
+          <div style="color:var(--muted); font-weight:800; font-size:.9rem;">Davenport, IA • Quad Cities</div>
+        </div>
+      </a>
+
+      <nav class="nav hide-mobile" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#before-after">Before/After</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="top-cta">
+        <a class="btn btn-ghost" href="mailto:Hare2haultoday@gmail.com?subject=Quote%20Request%20-%20Hare2Haul">Email</a>
+        <a class="btn btn-primary" href="tel:+15635388490">Call Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <div class="hero-copy">
+          <span class="pill">Serving <b>Davenport, Iowa</b> • Quad Cities • Surrounding Areas</span>
+
+          <h1 class="reveal">
+            Junk piling up?<br />
+            <span class="hl">We haul it out—fast.</span>
+          </h1>
+
+          <p class="reveal">
+            Move-out cleanouts, garage cleanouts, storage units, yard debris, and general junk removal.
+            Big or small—if it’s in the way, we’ll take it away.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary" href="tel:+15635388490">📞 Call for a Quote</a>
+            <a class="btn btn-ghost" href="mailto:Hare2haultoday@gmail.com?subject=Quote%20Request%20-%20Hare2Haul">✉️ Email for a Quote</a>
+            <span class="mini">Same-day / next-day availability when open.</span>
+          </div>
+
+          <div class="badges reveal" aria-label="Highlights">
+            <span class="badge"><span class="dot"></span> Fast response</span>
+            <span class="badge"><span class="dot"></span> Fair pricing</span>
+            <span class="badge"><span class="dot"></span> Clean + respectful</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card hero-media" aria-label="Hero image">
+        <img src="assets/hare2haul-drowning-in-junk-hero.png" alt="Drowning in junk promotional image" />
+        <div class="hero-overlay"></div>
+
+        <div class="hero-sticker" role="note" aria-label="Contact">
+          <img src="assets/hare2haul-logo-square.png" alt="" />
+          <div>
+            <strong>Rickey Hare</strong>
+            <span><a href="tel:+15635388490">563-538-8490</a> • <a href="mailto:Hare2haultoday@gmail.com">Hare2haultoday@gmail.com</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="reveal">What we haul & clean out</h2>
+          <p class="reveal">Straightforward help for the jobs you don’t want to deal with.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card card-pad reveal">
+          <div class="icon">🛋️</div>
+          <h3>Move-Out Cleanouts</h3>
+          <p>Leftover furniture, boxes, trash bags, and “last minute” items—gone quickly and cleanly.</p>
+        </article>
+
+        <article class="card card-pad reveal">
+          <div class="icon">🏠</div>
+          <h3>House & Apartment Junk</h3>
+          <p>Basements, bedrooms, living rooms—haul-away for the stuff you’re ready to get rid of.</p>
+        </article>
+
+        <article class="card card-pad reveal">
+          <div class="icon">📦</div>
+          <h3>Storage Units</h3>
+          <p>Clear it out and close it out. We haul away boxes, bins, furniture, and junk fast.</p>
+        </article>
+
+        <article class="card card-pad reveal">
+          <div class="icon">🚗</div>
+          <h3>Garage Cleanouts</h3>
+          <p>Make your garage usable again—tools, old furniture, clutter, and random junk removed.</p>
+        </article>
+
+        <article class="card card-pad reveal">
+          <div class="icon">🍂</div>
+          <h3>Yard Debris</h3>
+          <p>Leaves, branches, and cleanup piles. Also great for post-project or seasonal cleanups.</p>
+        </article>
+
+        <article class="card card-pad reveal">
+          <div class="icon">🧱</div>
+          <h3>Light Debris Cleanup</h3>
+          <p>General debris from projects (non-hazardous). Call with details and we’ll quote it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE/AFTER -->
+  <section id="before-after">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="reveal">Realistic before & after results</h2>
+          <p class="reveal">Same spot. Same angle. Just… gone.</p>
+        </div>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-card reveal">
+          <div class="ba-title">
+            <strong>Living Room Move-Out</strong>
+            <span>Before → After</span>
+          </div>
+          <div class="ba-split">
+            <div class="ba-shot">
+              <img src="assets/living-room-moveout-before.png" alt="Living room before cleanout" />
+              <div class="tag before">BEFORE</div>
+            </div>
+            <div class="ba-shot">
+              <img src="assets/living-room-moveout-after.png" alt="Living room after cleanout" />
+              <div class="tag after">AFTER</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-card reveal">
+          <div class="ba-title">
+            <strong>Yard Debris Cleanup</strong>
+            <span>Before → After</span>
+          </div>
+          <div class="ba-split">
+            <div class="ba-shot">
+              <img src="assets/yard-debris-before.png" alt="Yard debris before cleanup" />
+              <div class="tag before">BEFORE</div>
+            </div>
+            <div class="ba-shot">
+              <img src="assets/yard-debris-after.png" alt="Yard after cleanup" />
+              <div class="tag after">AFTER</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-card reveal">
+          <div class="ba-title">
+            <strong>Storage Unit Cleanout</strong>
+            <span>Before → After</span>
+          </div>
+          <div class="ba-split">
+            <div class="ba-shot">
+              <img src="assets/storage-unit-before.png" alt="Storage unit before cleanout" />
+              <div class="tag before">BEFORE</div>
+            </div>
+            <div class="ba-shot">
+              <img src="assets/storage-unit-after.png" alt="Storage unit after cleanout" />
+              <div class="tag after">AFTER</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-card reveal">
+          <div class="ba-title">
+            <strong>Garage Cleanout</strong>
+            <span>Before → After</span>
+          </div>
+          <div class="ba-split">
+            <div class="ba-shot">
+              <img src="assets/garage-cleanout-before.png" alt="Garage before cleanout" />
+              <div class="tag before">BEFORE</div>
+            </div>
+            <div class="ba-shot">
+              <img src="assets/garage-cleanout-after.png" alt="Garage after cleanout" />
+              <div class="tag after">AFTER</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:1.2rem" class="cta-banner reveal">
+        <div class="cta-inner">
+          <div>
+            <h3>Big or small — we’re Hare2Haul</h3>
+            <p>
+              Tell us what you’ve got and where you’re located. We’ll give you a quick quote by phone or email.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="tel:+15635388490">📞 Call: 563-538-8490</a>
+            <a class="btn btn-ghost" href="mailto:Hare2haultoday@gmail.com?subject=Quote%20Request%20-%20Hare2Haul">✉️ Email for a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="reveal">What customers say</h2>
+          <p class="reveal">A few recent reviews (sample testimonials for marketing).</p>
+        </div>
+      </div>
+
+      <div class="reviews">
+        <article class="card review reveal">
+          <div class="stars">★★★★★</div>
+          <p>
+            “Rickey was fast, professional, and fair on price. We had a move-out cleanout and he had it cleared
+            way quicker than we expected.”
+          </p>
+          <div class="who">
+            <span>— Amanda T.</span>
+            <span>Davenport</span>
+          </div>
+        </article>
+
+        <article class="card review reveal">
+          <div class="stars">★★★★★</div>
+          <p>
+            “Storage unit was packed with old furniture and boxes. Hare2Haul showed up on time and cleaned it
+            out completely. Super easy to work with.”
+          </p>
+          <div class="who">
+            <span>— Marcus J.</span>
+            <span>Bettendorf</span>
+          </div>
+        </article>
+
+        <article class="card review reveal">
+          <div class="stars">★★★★★</div>
+          <p>
+            “I had a yard debris pile after a project and wanted it gone ASAP. One call and it was handled.
+            I’ll definitely use Hare2Haul again.”
+          </p>
+          <div class="who">
+            <span>— Lisa R.</span>
+            <span>Quad Cities</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="reveal">Get a quick quote</h2>
+          <p class="reveal">
+            Call or email with what you need removed, your location, and your timeline.
+            Serving Davenport, IA + the Quad Cities and surrounding areas.
+          </p>
+        </div>
+      </div>
+
+      <div class="cta-banner reveal">
+        <div class="cta-inner">
+          <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+            <img src="assets/big-or-small-were-hare2haul.png" alt="Big or small we're Hare2Haul" style="width: min(420px, 100%); border-radius:18px; border:1px solid rgba(255,255,255,.10); box-shadow:0 18px 45px rgba(0,0,0,.45)" />
+            <div>
+              <h3 style="margin-top:.2rem;">Rickey Hare</h3>
+              <p style="margin:.25rem 0 0; color:var(--muted); font-weight:800; line-height:1.6;">
+                📍 Davenport, Iowa • Quad Cities & surrounding areas<br>
+                📞 <a href="tel:+15635388490">563-538-8490</a><br>
+                ✉️ <a href="mailto:Hare2haultoday@gmail.com">Hare2haultoday@gmail.com</a>
+              </p>
+              <div class="hero-actions" style="margin-top:1rem;">
+                <a class="btn btn-primary" href="tel:+15635388490">Call for a Quote</a>
+                <a class="btn btn-ghost" href="mailto:Hare2haultoday@gmail.com?subject=Quote%20Request%20-%20Hare2Haul">Email for a Quote</a>
+              </div>
+              <p class="small">
+                Tip: For the fastest quote, tell us the items, how many, and whether stairs are involved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <img src="assets/hare2haul-logo-square.png" alt="Hare2Haul logo" />
+        <div>
+          <div style="font-size:1.2rem; font-weight:950; letter-spacing:-.2px;">Hare2Haul</div>
+          <p>
+            Junk Removal & Cleanouts • Davenport, IA • Serving the Quad Cities & surrounding areas.
+          </p>
+          <div class="small">© <span id="year"></span> Hare2Haul. All rights reserved.</div>
+        </div>
+      </div>
+
+      <div class="foot-links" aria-label="Contact links">
+        <a href="tel:+15635388490">📞 Call: 563-538-8490</a>
+        <a href="mailto:Hare2haultoday@gmail.com?subject=Quote%20Request%20-%20Hare2Haul">✉️ Email for a Quote</a>
+        <a href="#before-after">🧹 See Before/After</a>
+        <a href="#services">🗑️ Services</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple reveal-on-scroll
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) e.target.classList.add("show");
+      }
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
